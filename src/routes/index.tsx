@@ -4,7 +4,7 @@ import { ArrowRight, ShieldCheck, Truck, Gauge, Clock4, Award, Star, MapPin, Nav
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
 import heroVideo from "@/assets/hero-tyre-cinematic.mp4.asset.json";
-import truckHighway from "@/assets/truck-highway.png.asset.json";
+import tyreBg from "@/assets/tyre-workshop-bg.jpg.asset.json";
 
 
 
