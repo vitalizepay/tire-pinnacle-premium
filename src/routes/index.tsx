@@ -4,6 +4,7 @@ import { ArrowRight, ShieldCheck, Truck, Gauge, Clock4, Award, Star, MapPin, Nav
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
 import heroVideo from "@/assets/hero-tyre-cinematic.mp4.asset.json";
+import truckHighway from "@/assets/truck-highway.png.asset.json";
 
 
 
@@ -118,15 +119,21 @@ function Index() {
 
 
       {/* VALUE PROPS */}
-      <section className="container-x py-20 md:py-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="relative overflow-hidden py-20 md:py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.12]"
+          style={{ backgroundImage: `url(${truckHighway.url})` }}
+        />
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
+        <div className="container-x relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { i: ShieldCheck, t: "Genuine Premium", d: "Authorised supply of leading global truck tyre brands." },
             { i: Gauge, t: "Precision Service", d: "Laser alignment and dynamic balancing by certified technicians." },
             { i: Truck, t: "Fleet Specialists", d: "Custom programmes for transport and logistics fleets." },
           ].map((f, i) => (
             <Reveal key={f.t} delay={i * 0.08}>
-              <div className="group h-full rounded-3xl border border-border bg-white p-6 transition hover:-translate-y-1 hover:shadow-soft sm:p-7">
+              <div className="group h-full rounded-3xl border border-border bg-white/80 p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-soft sm:p-7">
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-ink text-white transition group-hover:bg-brand">
                   <f.i className="h-5 w-5" />
                 </div>
