@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import logoAsset from "@/assets/qasr-logo.png.asset.json";
 import { nav, site } from "@/data/site";
 
@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logoAsset.url} alt="Qasr Al Bustan Tyres" className="h-20 w-20 object-contain" width={80} height={80} />
+            <img src={logoAsset.url} alt="Qasr Al Bustan Tyres" className="h-24 w-24 object-contain" width={96} height={96} />
               <div>
                 <div className="text-base font-bold leading-tight">Qasr Al Bustan</div>
                 <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-brand">Truck Tyres</div>
@@ -20,17 +20,6 @@ export function Footer() {
             <p className="mt-5 text-sm leading-relaxed text-white/60">
               Premium tyres, professional service, trusted by drivers and fleets across the UAE since day one.
             </p>
-            <div className="mt-6 flex gap-3">
-              <a href={site.social.facebook} aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 transition hover:bg-brand">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href={site.social.instagram} aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 transition hover:bg-brand">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href={site.social.linkedin} aria-label="LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-white/5 transition hover:bg-brand">
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           <div>
