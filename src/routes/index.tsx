@@ -4,7 +4,7 @@ import { ArrowRight, ShieldCheck, Truck, Gauge, Clock4, Award, Star, MapPin, Nav
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
 import heroVideo from "@/assets/hero-tyre-cinematic.mp4.asset.json";
-import truckHighway from "@/assets/truck-highway.png.asset.json";
+import tyreBg from "@/assets/tyre-workshop-bg.jpg.asset.json";
 
 
 
@@ -123,7 +123,7 @@ function Index() {
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.12]"
-          style={{ backgroundImage: `url(${truckHighway.url})` }}
+          style={{ backgroundImage: `url(${tyreBg.url})` }}
         />
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
         <div className="container-x relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

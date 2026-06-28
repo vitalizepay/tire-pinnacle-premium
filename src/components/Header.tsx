@@ -14,7 +14,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 md:top-6">
+    <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <div className="flex items-center justify-between gap-4 rounded-full border border-white/40 bg-white/70 px-4 py-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl md:px-8 md:py-4">
           <Link to="/" className="flex shrink-0 items-center gap-3">
