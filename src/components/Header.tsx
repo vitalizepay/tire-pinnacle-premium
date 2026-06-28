@@ -21,9 +21,9 @@ export function Header() {
             <img
               src={logoAsset.url}
               alt="Qasr Al Bustan Tyres"
-              className="h-14 w-14 object-contain md:h-16 md:w-16"
-              width={64}
-              height={64}
+              className="h-20 w-20 object-contain md:h-24 md:w-24"
+              width={96}
+              height={96}
             />
             <div className="hidden min-w-0 sm:block">
               <div className="text-base font-bold leading-tight tracking-tight text-ink">Qasr Al Bustan</div>
