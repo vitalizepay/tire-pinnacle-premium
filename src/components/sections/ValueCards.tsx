@@ -1,13 +1,14 @@
 import { ShieldCheck, Gauge, Truck } from "lucide-react";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
-
-const cards = [
-  { i: ShieldCheck, t: "Genuine Premium", d: "Authorised supply of leading global truck-tyre brands." },
-  { i: Gauge, t: "Precision Service", d: "Laser alignment and dynamic balancing by certified technicians." },
-  { i: Truck, t: "Fleet Specialists", d: "Custom programmes for transport and logistics fleets." },
-];
+import { useLang, type TKey } from "@/contexts/LanguageContext";
 
 export function ValueCards() {
+  const { t } = useLang();
+  const cards: { i: any; t: string; d: string }[] = [
+    { i: ShieldCheck, t: t("vc1Title" as TKey), d: t("vc1Desc" as TKey) },
+    { i: Gauge, t: t("vc2Title" as TKey), d: t("vc2Desc" as TKey) },
+    { i: Truck, t: t("vc3Title" as TKey), d: t("vc3Desc" as TKey) },
+  ];
   return (
     <section className="bg-white py-20">
       <div className="container-x grid gap-8 md:grid-cols-3">
