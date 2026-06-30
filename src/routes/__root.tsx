@@ -14,7 +14,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingActions, ScrollProgress } from "@/components/FloatingActions";
-import { useLenis } from "@/hooks/useLenis";
 
 function NotFoundComponent() {
   return (
@@ -146,7 +145,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  useLenis();
+
   return (
     <QueryClientProvider client={queryClient}>
       <ScrollProgress />
