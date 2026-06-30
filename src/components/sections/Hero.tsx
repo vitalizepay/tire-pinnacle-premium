@@ -2,38 +2,55 @@ import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/Button";
 import heroVideo from "@/assets/hero-truck-cinematic.mp4.asset.json";
+import tyreVideo from "@/assets/tyre-focus-loop.webm.asset.json";
 import poster from "@/assets/hero-truck-premium.jpg";
 
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoARef = useRef<HTMLVideoElement>(null);
+  const videoBRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    let raf = 0;
+    const a = videoARef.current;
+    const b = videoBRef.current;
+    if (!a || !b) return;
     const FADE = 0.6;
+    let raf = 0;
+    let active: HTMLVideoElement = a;
+    let inactive: HTMLVideoElement = b;
+
+    a.style.opacity = "0";
+    b.style.opacity = "0";
+    a.play().catch(() => {});
+
     const tick = () => {
       raf = requestAnimationFrame(tick);
-      const d = v.duration;
+      const d = active.duration;
       if (!d || isNaN(d)) return;
-      const t = v.currentTime;
+      const t = active.currentTime;
       let op = 1;
       if (t < FADE) op = t / FADE;
       else if (t > d - FADE) op = Math.max(0, (d - t) / FADE);
-      v.style.opacity = String(op);
+      active.style.opacity = String(op);
     };
-    const onEnded = () => {
-      v.style.opacity = "0";
-      setTimeout(() => {
-        v.currentTime = 0;
-        v.play().catch(() => {});
-      }, 120);
+
+    const swap = () => {
+      const next = inactive;
+      const prev = active;
+      prev.style.opacity = "0";
+      try { prev.pause(); prev.currentTime = 0; } catch {}
+      active = next;
+      inactive = prev;
+      active.currentTime = 0;
+      active.play().catch(() => {});
     };
-    v.addEventListener("ended", onEnded);
+
+    a.addEventListener("ended", swap);
+    b.addEventListener("ended", swap);
     raf = requestAnimationFrame(tick);
     return () => {
       cancelAnimationFrame(raf);
-      v.removeEventListener("ended", onEnded);
+      a.removeEventListener("ended", swap);
+      b.removeEventListener("ended", swap);
     };
   }, []);
 
@@ -44,10 +61,19 @@ export function Hero() {
     >
       <div className="absolute inset-0 animate-ken-burns">
         <video
-          ref={videoRef}
+          ref={videoARef}
           src={heroVideo.url}
           poster={poster}
           autoPlay
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full scale-105 object-cover"
+          style={{ opacity: 0 }}
+        />
+        <video
+          ref={videoBRef}
+          src={tyreVideo.url}
           muted
           playsInline
           preload="auto"
