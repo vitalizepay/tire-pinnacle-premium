@@ -1,54 +1,78 @@
 import { useEffect, useState } from "react";
-import { motion, useScroll } from "framer-motion";
-import { Phone, MessageCircle, ArrowUp } from "lucide-react";
+import { Phone, MessageCircle, Instagram } from "lucide-react";
 import { site } from "@/data/site";
 
 export function ScrollProgress() {
-  const { scrollYProgress } = useScroll();
+  const [pct, setPct] = useState(0);
+  useEffect(() => {
+    const on = () => {
+      const h = document.documentElement;
+      const total = h.scrollHeight - h.clientHeight;
+      setPct(total > 0 ? (h.scrollTop / total) * 100 : 0);
+    };
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
   return (
-    <motion.div
-      style={{ scaleX: scrollYProgress }}
-      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-brand"
-    />
+    <div className="fixed inset-x-0 top-0 z-[70] h-[2px] bg-transparent">
+      <div
+        className="h-full bg-gold-grad transition-[width] duration-100"
+        style={{ width: `${pct}%` }}
+      />
+    </div>
+  );
+}
+
+function PulseRingBtn({
+  href,
+  bg,
+  label,
+  children,
+  target,
+}: {
+  href: string;
+  bg: string;
+  label: string;
+  children: React.ReactNode;
+  target?: string;
+}) {
+  return (
+    <a
+      href={href}
+      target={target}
+      rel={target ? "noreferrer" : undefined}
+      aria-label={label}
+      className="relative grid h-14 w-14 place-items-center rounded-full text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition hover:scale-110"
+      style={{ background: bg }}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-full animate-pulse-ring"
+        style={{ background: bg, opacity: 0.55 }}
+      />
+      <span className="relative">{children}</span>
+    </a>
   );
 }
 
 export function FloatingActions() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
-      {show && (
-        <button
-          aria-label="Back to top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="grid h-12 w-12 place-items-center rounded-full bg-ink text-white shadow-soft transition hover:scale-110"
-        >
-          <ArrowUp className="h-5 w-5" />
-        </button>
-      )}
-      <a
-        href={`tel:${site.phone}`}
-        aria-label="Call us"
-        className="grid h-14 w-14 place-items-center rounded-full bg-ink text-white shadow-soft transition hover:scale-110"
-      >
-        <Phone className="h-5 w-5" />
-      </a>
-      <a
-        href={site.whatsapp}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="WhatsApp"
-        className="grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-soft transition hover:scale-110"
-      >
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <PulseRingBtn href={site.whatsapp} target="_blank" bg="#25D366" label="WhatsApp">
         <MessageCircle className="h-6 w-6" />
-      </a>
+      </PulseRingBtn>
+      <PulseRingBtn href={`tel:${site.phone}`} bg="#C0392B" label="Call us">
+        <Phone className="h-5 w-5" />
+      </PulseRingBtn>
+      <PulseRingBtn
+        href="https://www.instagram.com/qasralbustan.tyres/"
+        target="_blank"
+        bg="linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4)"
+        label="Instagram"
+      >
+        <Instagram className="h-5 w-5" />
+      </PulseRingBtn>
     </div>
   );
 }
