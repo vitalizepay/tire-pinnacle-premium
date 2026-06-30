@@ -15,6 +15,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingActions, ScrollProgress } from "@/components/FloatingActions";
 import { useLenis } from "@/hooks/useLenis";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 function NotFoundComponent() {
   return (
@@ -149,13 +150,15 @@ function RootComponent() {
   useLenis();
   return (
     <QueryClientProvider client={queryClient}>
-      <ScrollProgress />
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-      <FloatingActions />
+      <LanguageProvider>
+        <ScrollProgress />
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        <FloatingActions />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

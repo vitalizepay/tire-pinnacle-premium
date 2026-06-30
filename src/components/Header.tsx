@@ -4,16 +4,18 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/qasr-logo.png.asset.json";
 import { site } from "@/data/site";
 import { Button } from "@/components/Button";
+import { LanguageToggle, useLang, type TKey } from "@/contexts/LanguageContext";
 
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Tyres", href: "#tyres" },
+const links: { key: TKey; href: string }[] = [
+  { key: "navHome", href: "#home" },
+  { key: "navAbout", href: "#about" },
+  { key: "navTyres", href: "#tyres" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLang();
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
@@ -40,10 +42,10 @@ export function Header() {
           />
           <div className="leading-tight">
             <div className="font-clash text-xl font-semibold tracking-tight text-[#14110D] sm:text-2xl md:text-3xl whitespace-nowrap">
-              Qasr Al Bustan Tyres
+              {t("brand")}
             </div>
             <div className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C] sm:block">
-              Commercial Truck &amp; Car Tyres
+              {t("brandSub")}
             </div>
           </div>
         </Link>
@@ -55,12 +57,13 @@ export function Header() {
               href={n.href}
               className="story-link text-[14px] font-medium text-[#7C7568] transition-colors hover:text-[#14110D]"
             >
-              {n.label}
+              {t(n.key)}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle className="hidden md:inline-flex" />
           <a
             href={site.whatsapp}
             target="_blank"
@@ -76,7 +79,7 @@ export function Header() {
             variant="callnow"
             className="hidden md:inline-flex px-5 py-2.5 text-[13px]"
           >
-            <Phone className="h-4 w-4" /> Call Now
+            <Phone className="h-4 w-4" /> {t("callNow")}
           </Button>
           <button
             type="button"
@@ -113,11 +116,12 @@ export function Header() {
                 className="font-clash text-3xl text-gold-grad opacity-0 animate-fade-rise"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                {n.label}
+                {t(n.key)}
               </a>
             ))}
           </nav>
           <div className="mt-auto flex flex-col gap-3">
+            <LanguageToggle className="self-start" />
             <Button as="a" href={`tel:${site.phone}`} variant="callnow">
               <Phone className="h-4 w-4" /> {site.phoneDisplay}
             </Button>

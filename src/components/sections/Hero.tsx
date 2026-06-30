@@ -2,10 +2,15 @@ import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/Button";
 import heroVideo from "@/assets/hero-truck-cinematic.mp4.asset.json";
+import heroVideo2 from "@/assets/hero-tyre-cinematic.mp4.asset.json";
 import poster from "@/assets/hero-truck-premium.jpg";
+import { useLang } from "@/contexts/LanguageContext";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sources = [heroVideo.url, heroVideo2.url];
+  const indexRef = useRef(0);
+  const { t } = useLang();
 
   useEffect(() => {
     const v = videoRef.current;
@@ -25,7 +30,9 @@ export function Hero() {
     const onEnded = () => {
       v.style.opacity = "0";
       setTimeout(() => {
-        v.currentTime = 0;
+        indexRef.current = (indexRef.current + 1) % sources.length;
+        v.src = sources[indexRef.current];
+        v.load();
         v.play().catch(() => {});
       }, 120);
     };
@@ -35,6 +42,7 @@ export function Hero() {
       cancelAnimationFrame(raf);
       v.removeEventListener("ended", onEnded);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -73,7 +81,7 @@ export function Hero() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#C8A45C]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#E6C57A]">
-              Commercial Truck Tyre Specialists
+              {t("heroEyebrow")}
             </span>
           </div>
 
@@ -81,39 +89,39 @@ export function Hero() {
             className="mt-7 font-clash text-5xl font-semibold leading-[0.95] tracking-[-0.02em] text-white sm:text-7xl md:text-8xl opacity-0 animate-fade-rise"
             style={{ animationDelay: "0.15s", textShadow: "0 6px 30px rgba(0,0,0,0.6)" }}
           >
-            Heavy-duty Truck Tyres
+            {t("heroTitle1")}
           </h1>
           <div
             className="font-serif-italic text-5xl leading-[0.95] tracking-tight text-gold-grad sm:text-7xl md:text-8xl opacity-0 animate-fade-rise"
             style={{ animationDelay: "0.3s", fontWeight: 500 }}
           >
-            Built for Every Journey.
+            {t("heroTitle2")}
           </div>
 
           <p
             className="mt-7 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg opacity-0 animate-fade-rise"
             style={{ animationDelay: "0.45s" }}
           >
-            Premium commercial truck tyre solutions engineered for maximum mileage, durability, safety, and fleet performance across the UAE.
+            {t("heroDesc")}
           </p>
 
           <div
             className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-rise"
             style={{ animationDelay: "0.6s" }}
           >
-            <Button as="a" href="#tyres" variant="gold">Explore Our Tyres</Button>
-            <Button as="a" href="#contact" variant="ghost-dark">Talk to a Specialist</Button>
+            <Button as="a" href="#tyres" variant="gold">{t("heroCta1")}</Button>
+            <Button as="a" href="#contact" variant="ghost-dark">{t("heroCta2")}</Button>
           </div>
 
           <div
             className="mt-12 flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/55 opacity-0 animate-fade-rise"
             style={{ animationDelay: "0.75s" }}
           >
-            <span>Authorised supply</span>
+            <span>{t("heroBadge1")}</span>
             <span className="text-white/25">·</span>
-            <span>Certified technicians</span>
+            <span>{t("heroBadge2")}</span>
             <span className="text-white/25">·</span>
-            <span>Fleet programmes</span>
+            <span>{t("heroBadge3")}</span>
           </div>
         </div>
       </div>

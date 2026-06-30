@@ -1,9 +1,11 @@
 {
-  "asset_id": "a46f51b5-6ba6-4adf-9144-a7c3153985ca",
-  "created_at": "2026-06-27T13:12:07Z",
-  "original_filename": "hero-tyre-cinematic.mp4",
+  "version": 1,
+  "asset_id": "3cae8e4d-9905-4b72-91d9-5a60a6ef62ff",
   "project_id": "dd365733-4360-4c8c-a2a1-126e9dd60073",
+  "url": "/__l5e/assets-v1/3cae8e4d-9905-4b72-91d9-5a60a6ef62ff/hero-tyre-cinematic.mp4",
+  "r2_key": "a/v1/dd365733-4360-4c8c-a2a1-126e9dd60073/3cae8e4d-9905-4b72-91d9-5a60a6ef62ff/hero-tyre-cinematic.mp4",
+  "original_filename": "hero-tyre-cinematic.mp4",
   "size": 21684791,
-  "url": "/__l5e/assets-v1/a46f51b5-6ba6-4adf-9144-a7c3153985ca/hero-tyre-cinematic.mp4",
-  "version": 1
+  "content_type": "video/mp4",
+  "created_at": "2026-06-30T19:18:06Z"
 }
