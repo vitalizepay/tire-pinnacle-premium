@@ -17,7 +17,7 @@ export function FindTyres() {
           <div className="eyebrow !text-[#C8A45C]">Explore Our Range</div>
           <h2 className="mt-4 font-clash text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl">
             Find Your{" "}
-            <span className="font-serif-italic text-gold-grad" style={{ fontWeight: 500 }}>Truck Tyres</span>
+            <span className="font-serif-italic text-gold-grad" style={{ fontWeight: 500 }}>Truck &amp; Car Tyres</span>
           </h2>
           <p className="mt-5 max-w-md text-white/75">
             From long-haul highway to interregional and urban delivery — the
