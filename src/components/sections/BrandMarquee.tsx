@@ -1,18 +1,28 @@
+import { brands } from "@/data/brands";
+
 export function BrandMarquee() {
+  const row = [...brands, ...brands];
   return (
-    <section className="bg-white py-20">
-      <div className="container-x text-center">
-        <div className="eyebrow !text-[#A87B33]">Tyre Availability</div>
-        <h2 className="mt-5 font-clash text-4xl font-semibold tracking-tight text-[#14110D] md:text-5xl">
-          All sizes and{" "}
-          <span className="font-serif-italic text-gold-grad" style={{ fontWeight: 500 }}>
-            custom tyres
-          </span>{" "}
-          are available
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-[#7C7568]">
-          Whatever the spec — fleet, commercial, off-road or special order — we source and fit it.
-        </p>
+    <section className="bg-white py-16">
+      <div className="container-x">
+        <div className="text-center eyebrow !text-[#A87B33]">
+          Authorised Supply of Leading Global Brands
+        </div>
+        <div className="mt-10 mask-fade-x overflow-hidden">
+          <div
+            className="flex w-max items-center gap-16 animate-marquee hover:[animation-play-state:paused]"
+            style={{ animationDuration: "28s" }}
+          >
+            {row.map((b, i) => (
+              <span
+                key={i}
+                className="font-clash whitespace-nowrap text-2xl font-semibold tracking-tight text-[#7C7568]/60 transition-colors hover:text-[#A87B33] md:text-3xl"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

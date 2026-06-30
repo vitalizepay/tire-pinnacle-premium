@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, Instagram } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { site } from "@/data/site";
 
 export function ScrollProgress() {
@@ -64,14 +64,6 @@ export function FloatingActions() {
       </PulseRingBtn>
       <PulseRingBtn href={`tel:${site.phone}`} bg="#C0392B" label="Call us">
         <Phone className="h-5 w-5" />
-      </PulseRingBtn>
-      <PulseRingBtn
-        href="https://www.instagram.com/qasralbustan.tyres/"
-        target="_blank"
-        bg="linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4)"
-        label="Instagram"
-      >
-        <Instagram className="h-5 w-5" />
       </PulseRingBtn>
     </div>
   );
