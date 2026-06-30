@@ -8,10 +8,7 @@ import { Button } from "@/components/Button";
 const links = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Fleet Solutions", href: "#fleet" },
   { label: "Tyres", href: "#tyres" },
-  { label: "Insights", href: "#insights" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
@@ -39,14 +36,14 @@ export function Header() {
           <img
             src={logoAsset.url}
             alt="Qasr Al Bustan Tyres"
-            className="h-11 w-11 object-contain"
+            className="h-12 w-12 object-contain md:h-14 md:w-14"
           />
-          <div className="hidden leading-tight sm:block">
-            <div className="font-clash text-[15px] font-semibold tracking-tight text-[#14110D]">
-              Qasr Al Bustan
+          <div className="leading-tight">
+            <div className="font-clash text-xl font-semibold tracking-tight text-[#14110D] sm:text-2xl md:text-3xl whitespace-nowrap">
+              Qasr Al Bustan Tyres
             </div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C]">
-              Truck Tyres
+            <div className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C] sm:block">
+              Commercial Truck &amp; Car Tyres
             </div>
           </div>
         </Link>
