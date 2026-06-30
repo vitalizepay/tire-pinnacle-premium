@@ -5,15 +5,11 @@ import { site } from "@/data/site";
 const col1 = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Fleet Solutions", href: "#fleet" },
-  { label: "Insights", href: "#insights" },
-  { label: "Contact", href: "#contact" },
+  { label: "Tyres", href: "#tyres" },
 ];
 const col2 = [
-  { label: "Fleet Solutions", href: "#fleet" },
   { label: "About Us", href: "#about" },
-  { label: "Contact", href: "#contact" },
-  { label: "Insights", href: "#insights" },
+  { label: "Tyres", href: "#tyres" },
 ];
 
 export function Footer() {
