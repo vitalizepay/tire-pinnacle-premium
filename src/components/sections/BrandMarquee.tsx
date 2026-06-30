@@ -14,5 +14,6 @@ export function BrandMarquee() {
           Whatever the spec — fleet, commercial, off-road or special order — we source and fit it.
         </p>
       </div>
+    </section>
   );
 }
