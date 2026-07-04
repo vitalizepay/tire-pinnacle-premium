@@ -6,7 +6,6 @@ import { IntroStatement } from "@/components/sections/IntroStatement";
 import { ValueCards } from "@/components/sections/ValueCards";
 import { FindTyres } from "@/components/sections/FindTyres";
 import { FeatureCards } from "@/components/sections/FeatureCards";
-import { TyreSpecsSection } from "@/components/sections/TyreSpecsSection";
 import { TyreSizes } from "@/components/sections/TyreSizes";
 import { BrandMarquee } from "@/components/sections/BrandMarquee";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -31,14 +30,13 @@ function Index() {
   return (
     <>
       <Hero />
+      <TyreSizes />
       <FocusedTyreBand />
       <FleetMontage />
       <IntroStatement />
       <ValueCards />
       <FindTyres />
       <FeatureCards />
-      <TyreSpecsSection />
-      <TyreSizes />
       <BrandMarquee />
       <Testimonials />
       <FindUs />
