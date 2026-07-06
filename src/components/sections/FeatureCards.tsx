@@ -30,12 +30,12 @@ function Card({ img, t, d, delay }: { img: string; t: string; d: string; delay: 
       style={{ animationDelay: `${delay}s` }}
       className={"group " + (inView ? "animate-fade-in-up" : "opacity-0")}
     >
-      <div className="overflow-hidden rounded-[24px] border border-[rgba(214,162,74,0.20)] bg-white/[0.03] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-[#D6A24A]/60 group-hover:shadow-[0_25px_60px_-15px_rgba(214,162,74,0.35)]">
+      <div className="overflow-hidden rounded-[24px] border border-[rgba(214,162,74,0.20)] bg-white/[0.03] transition-all duration-[400ms] ease-out group-hover:-translate-y-2 group-hover:border-[#D6A24A] group-hover:shadow-[0_30px_70px_-15px_rgba(214,162,74,0.45)]">
         <img
           src={img}
           alt={t}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+          className="aspect-[4/3] w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.08]"
         />
         <div className="p-6">
           <h3 className="font-clash text-xl font-semibold text-white">{t}</h3>
