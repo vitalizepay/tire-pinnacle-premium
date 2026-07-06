@@ -67,11 +67,11 @@ export const dict = {
 
   // Feature cards
   fc1Title: { en: "Premium Truck Tyres", ar: "إطارات شاحنات عالية الجودة" },
-  fc1Desc: { en: "High-performance tyres designed for long-haul transport, construction vehicles and commercial fleets.", ar: "إطارات قوية مصممة للشاحنات والنقل التجاري." },
-  fc2Title: { en: "Fleet Management", ar: "إدارة الأساطيل" },
-  fc2Desc: { en: "Professional tyre inspections, balancing and maintenance to reduce downtime.", ar: "خدمات فحص وصيانة احترافية لتقليل التكاليف." },
-  fc3Title: { en: "Commercial Fleet Support", ar: "حلول متخصصة للأساطيل" },
-  fc3Desc: { en: "Dedicated tyre solutions for logistics companies and transport operators.", ar: "دعم متكامل لشركات النقل والخدمات اللوجستية." },
+  fc1Desc: { en: "Long-lasting tyres engineered for regional and long-haul transport with maximum mileage and safety.", ar: "إطارات مصممة لتحمل المسافات الطويلة وتوفير أفضل أداء وأمان." },
+  fc2Title: { en: "Fleet Management Solutions", ar: "حلول إدارة الأساطيل" },
+  fc2Desc: { en: "Reduce operating costs with tyre inspections, monitoring and scheduled maintenance.", ar: "نساعدك على تقليل التكاليف من خلال الفحص والصيانة الدورية." },
+  fc3Title: { en: "Professional Fleet Support", ar: "دعم متخصص للأساطيل" },
+  fc3Desc: { en: "Dedicated support for transport companies, logistics providers and commercial fleets.", ar: "خدمات احترافية لشركات النقل والخدمات اللوجستية." },
 
   // Why choose us
   whyEyebrow: { en: "Why Choose Us", ar: "لماذا تختارنا" },
