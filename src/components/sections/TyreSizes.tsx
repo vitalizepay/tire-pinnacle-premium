@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { Button } from "@/components/Button";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
+import { useLang } from "@/contexts/LanguageContext";
+import { site } from "@/data/site";
 
 const SIZES = [
   "175/70R14","185/70R14","185/60R15","195/65R15","205/65R15","205/55R16","205/60R16","215/55ZR16",
@@ -23,6 +25,7 @@ const BADGES = [
 export function TyreSizes() {
   const [q, setQ] = useState("");
   const { ref, inView } = useInViewAnimation<HTMLDivElement>();
+  const { t } = useLang();
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
@@ -151,11 +154,11 @@ export function TyreSizes() {
                 </div>
               </div>
               <div className="flex flex-col items-start gap-3 md:items-end">
-                <Button as="a" href="#contact" variant="gold">
-                  Request Custom Size
+                <Button as="a" href={site.whatsapp} target="_blank" rel="noreferrer" variant="gold">
+                  {t("tsCustomCta")}
                 </Button>
-                <Button as="a" href="#contact" variant="ghost-dark">
-                  Contact Sales
+                <Button as="a" href={`tel:${site.phone}`} variant="ghost-dark">
+                  {t("tsContactSales")}
                 </Button>
               </div>
             </div>
