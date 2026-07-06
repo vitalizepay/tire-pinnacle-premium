@@ -50,6 +50,47 @@ export const dict = {
   footerContact: { en: "Get in Touch", ar: "تواصل معنا" },
   footerBackTop: { en: "Back to top", ar: "إلى الأعلى" },
   footerRights: { en: "All rights reserved.", ar: "جميع الحقوق محفوظة." },
+
+  // Commercial Tyres
+  commEyebrow: { en: "Commercial Range", ar: "التشكيلة التجارية" },
+  commTitle: { en: "Commercial Tyres Built For Business", ar: "إطارات تجارية مصممة للأعمال" },
+  commDesc: {
+    en: "Premium truck, bus and commercial vehicle tyres for transport companies, logistics providers, construction fleets and industrial vehicles across the UAE.",
+    ar: "نوفر إطارات عالية الجودة للشاحنات والحافلات والمركبات التجارية في جميع أنحاء الإمارات لشركات النقل واللوجستيات وأساطيل البناء والمركبات الصناعية.",
+  },
+  commB1: { en: "Longer tyre life", ar: "عمر تشغيل أطول" },
+  commB2: { en: "Better fuel efficiency", ar: "استهلاك وقود أقل" },
+  commB3: { en: "Lower operating costs", ar: "تكلفة تشغيل أقل" },
+  commB4: { en: "Maximum safety", ar: "أعلى مستويات الأمان" },
+  commB5: { en: "Reliable performance", ar: "أداء موثوق" },
+  commCta: { en: "View Commercial Range", ar: "استعرض المنتجات" },
+
+  // Feature cards
+  fc1Title: { en: "Premium Truck Tyres", ar: "إطارات شاحنات عالية الجودة" },
+  fc1Desc: { en: "High-performance tyres designed for long-haul transport, construction vehicles and commercial fleets.", ar: "إطارات قوية مصممة للشاحنات والنقل التجاري." },
+  fc2Title: { en: "Fleet Management", ar: "إدارة الأساطيل" },
+  fc2Desc: { en: "Professional tyre inspections, balancing and maintenance to reduce downtime.", ar: "خدمات فحص وصيانة احترافية لتقليل التكاليف." },
+  fc3Title: { en: "Commercial Fleet Support", ar: "حلول متخصصة للأساطيل" },
+  fc3Desc: { en: "Dedicated tyre solutions for logistics companies and transport operators.", ar: "دعم متكامل لشركات النقل والخدمات اللوجستية." },
+
+  // Why choose us
+  whyEyebrow: { en: "Why Choose Us", ar: "لماذا تختارنا" },
+  whyTitleA: { en: "The Standard For", ar: "المعيار الأول" },
+  whyTitleB: { en: "Commercial Tyres", ar: "للإطارات التجارية" },
+  why1: { en: "Genuine Products", ar: "منتجات أصلية" },
+  why2: { en: "Premium Brands", ar: "ماركات عالمية" },
+  why3: { en: "Fleet Specialists", ar: "متخصصون في الأساطيل" },
+  why4: { en: "Fast UAE Delivery", ar: "توصيل سريع" },
+  why5: { en: "Competitive Pricing", ar: "أسعار تنافسية" },
+  why6: { en: "Professional Support", ar: "دعم احترافي" },
+
+  // Tyre sizes custom CTA
+  tsCustomCta: { en: "Request Custom Size", ar: "طلب مقاس خاص" },
+  tsContactSales: { en: "Contact Sales", ar: "تواصل مع المبيعات" },
+
+  // Find us
+  findUsWhats: { en: "WhatsApp", ar: "واتساب" },
+  findUsDirections: { en: "Get Directions", ar: "الاتجاهات" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;
