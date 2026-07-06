@@ -31,13 +31,12 @@ function Index() {
     <>
       <Hero />
       <TyreSizes />
-      <FocusedTyreBand />
+      <FeatureCards />
       <CommercialTyres />
       <IntroStatement />
       <ValueCards />
       <WhyChooseUs />
       <FindTyres />
-      <FeatureCards />
       <BrandMarquee />
       <Testimonials />
       <FindUs />
