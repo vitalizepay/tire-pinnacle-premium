@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
 import { FocusedTyreBand } from "@/components/sections/FocusedTyreBand";
-import { FleetMontage } from "@/components/sections/FleetMontage";
+import { CommercialTyres } from "@/components/sections/CommercialTyres";
 import { IntroStatement } from "@/components/sections/IntroStatement";
 import { ValueCards } from "@/components/sections/ValueCards";
 import { FindTyres } from "@/components/sections/FindTyres";
@@ -10,7 +10,7 @@ import { TyreSizes } from "@/components/sections/TyreSizes";
 import { BrandMarquee } from "@/components/sections/BrandMarquee";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FindUs } from "@/components/sections/FindUs";
-import { PartnerCTA } from "@/components/sections/PartnerCTA";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,15 +32,15 @@ function Index() {
       <Hero />
       <TyreSizes />
       <FocusedTyreBand />
-      <FleetMontage />
+      <CommercialTyres />
       <IntroStatement />
       <ValueCards />
+      <WhyChooseUs />
       <FindTyres />
       <FeatureCards />
       <BrandMarquee />
       <Testimonials />
       <FindUs />
-      <PartnerCTA />
     </>
   );
 }

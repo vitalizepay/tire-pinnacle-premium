@@ -1,10 +1,12 @@
-import { MapPin, Clock, Navigation } from "lucide-react";
+import { MapPin, Clock, Navigation, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/Button";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import { site } from "@/data/site";
+import { useLang } from "@/contexts/LanguageContext";
 
 export function FindUs() {
   const { ref, inView } = useInViewAnimation<HTMLDivElement>();
+  const { t } = useLang();
   return (
     <section className="bg-white py-24">
       <div
@@ -45,10 +47,13 @@ export function FindUs() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button as="a" href={site.mapDirections} target="_blank" rel="noreferrer" variant="gold">
-                <Navigation className="h-4 w-4" /> Get Directions
+                <Navigation className="h-4 w-4" /> {t("findUsDirections")}
               </Button>
               <Button as="a" href={`tel:${site.phone}`} variant="callnow">
-                Call {site.phoneDisplay}
+                <Phone className="h-4 w-4" /> {site.phoneDisplay}
+              </Button>
+              <Button as="a" href={site.whatsapp} target="_blank" rel="noreferrer" variant="ghost-dark">
+                <MessageCircle className="h-4 w-4" /> {t("findUsWhats")}
               </Button>
             </div>
           </div>
