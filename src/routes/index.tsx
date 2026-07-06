@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
-import { FocusedTyreBand } from "@/components/sections/FocusedTyreBand";
 import { CommercialTyres } from "@/components/sections/CommercialTyres";
 import { IntroStatement } from "@/components/sections/IntroStatement";
 import { ValueCards } from "@/components/sections/ValueCards";
@@ -31,13 +30,12 @@ function Index() {
     <>
       <Hero />
       <TyreSizes />
-      <FocusedTyreBand />
+      <FeatureCards />
       <CommercialTyres />
       <IntroStatement />
       <ValueCards />
       <WhyChooseUs />
       <FindTyres />
-      <FeatureCards />
       <BrandMarquee />
       <Testimonials />
       <FindUs />
