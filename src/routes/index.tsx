@@ -2,14 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
 import { PremiumBanner } from "@/components/sections/PremiumBanner";
 import { VehicleCategories } from "@/components/sections/VehicleCategories";
-import { IntroStatement } from "@/components/sections/IntroStatement";
 import { ValueCards } from "@/components/sections/ValueCards";
 import { FindTyres } from "@/components/sections/FindTyres";
-import { TyreSizes } from "@/components/sections/TyreSizes";
 import { BrandMarquee } from "@/components/sections/BrandMarquee";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FindUs } from "@/components/sections/FindUs";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,11 +27,8 @@ function Index() {
     <>
       <Hero />
       <PremiumBanner />
-      <TyreSizes />
       <VehicleCategories />
-      <IntroStatement />
       <ValueCards />
-      <WhyChooseUs />
       <FindTyres />
       <BrandMarquee />
       <Testimonials />

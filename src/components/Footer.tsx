@@ -1,4 +1,4 @@
-import { ArrowUp, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { ArrowUp, MapPin, Phone, Mail } from "lucide-react";
 import { site } from "@/data/site";
 import { useLang, type TKey } from "@/contexts/LanguageContext";
 
@@ -57,7 +57,6 @@ export function Footer() {
               ))}
               <li className="flex gap-3"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><a href={`tel:${site.phone}`} className="hover:text-white">{site.phoneDisplay}</a></li>
               <li className="flex gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
-              <li className="flex gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><span>{site.hours}</span></li>
             </ul>
           </div>
         </div>

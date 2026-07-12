@@ -27,7 +27,7 @@ export function VehicleCategories() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/60">{t("vehDesc")}</p>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {tyreCategories.map((c, i) => (
             <Link
               key={c.slug}
@@ -36,15 +36,15 @@ export function VehicleCategories() {
               className="group relative overflow-hidden rounded-[22px] border border-[rgba(214,162,74,0.18)] bg-white/[0.03] transition-all duration-[400ms] ease-out hover:-translate-y-2 hover:border-[#D6A24A] hover:shadow-[0_30px_70px_-20px_rgba(214,162,74,0.45)]"
               style={{ animationDelay: `${0.05 + i * 0.05}s` }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[5/4] overflow-hidden sm:aspect-[4/3]">
                 <img
                   src={c.image}
                   alt={titleFor(lang, c)}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.08]"
+                  className="h-full w-full scale-[1.02] object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.1]"
                 />
               </div>
-              <div className="p-5">
+              <div className="p-6">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-clash text-lg font-semibold text-white">
                     {titleFor(lang, c)}

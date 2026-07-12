@@ -24,7 +24,7 @@ const variants: Record<Variant, string> = {
   "ghost-dark":
     "bg-white/5 text-white border border-white/20 hover:border-[#C8A45C]/60 hover:bg-white/10 backdrop-blur",
   callnow:
-    "bg-[#C0392B] text-white shadow-[0_4px_12px_rgba(192,57,43,.35)] hover:bg-[#a73122]",
+    "bg-[#3A3A3D] text-white shadow-[0_4px_12px_rgba(0,0,0,.30)] hover:bg-[#4a4a4d] border border-white/10",
 };
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
