@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
-import { CommercialTyres } from "@/components/sections/CommercialTyres";
+import { PremiumBanner } from "@/components/sections/PremiumBanner";
+import { VehicleCategories } from "@/components/sections/VehicleCategories";
 import { IntroStatement } from "@/components/sections/IntroStatement";
 import { ValueCards } from "@/components/sections/ValueCards";
 import { FindTyres } from "@/components/sections/FindTyres";
-import { FeatureCards } from "@/components/sections/FeatureCards";
 import { TyreSizes } from "@/components/sections/TyreSizes";
 import { BrandMarquee } from "@/components/sections/BrandMarquee";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -29,9 +29,9 @@ function Index() {
   return (
     <>
       <Hero />
+      <PremiumBanner />
       <TyreSizes />
-      <FeatureCards />
-      <CommercialTyres />
+      <VehicleCategories />
       <IntroStatement />
       <ValueCards />
       <WhyChooseUs />

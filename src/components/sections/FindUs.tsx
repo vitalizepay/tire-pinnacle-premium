@@ -1,4 +1,4 @@
-import { MapPin, Clock, Navigation, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Navigation, MessageCircle, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/Button";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import { site } from "@/data/site";
@@ -8,73 +8,59 @@ export function FindUs() {
   const { ref, inView } = useInViewAnimation<HTMLDivElement>();
   const { t } = useLang();
   return (
-    <section className="bg-white py-24">
+    <section id="contact" className="bg-white py-24">
       <div
         ref={ref}
-        className={
-          "container-x mx-auto max-w-6xl " +
-          (inView ? "animate-fade-in-up" : "opacity-0")
-        }
+        className={"container-x mx-auto max-w-6xl " + (inView ? "animate-fade-in-up" : "opacity-0")}
       >
-        <div className="grid items-stretch gap-12 md:grid-cols-2">
-          <div className="rounded-[28px] bg-[#F6F1E7] p-10">
-            <div className="eyebrow !text-[#A87B33]">Visit Our Workshop</div>
-            <h2 className="mt-4 font-clash text-4xl font-semibold leading-tight tracking-tight text-[#14110D] md:text-5xl">
-              Find Us in{" "}
-              <span className="font-serif-italic text-gold-grad" style={{ fontWeight: 600 }}>Sharjah.</span>
-            </h2>
-            <p className="mt-4 max-w-md text-[#7C7568]">
-              Walk in for an inspection, fitting or fleet consultation — we're
-              open 7 days a week.
-            </p>
+        <div className="text-center">
+          <div className="eyebrow !text-[#A87B33]">{t("visitEyebrow")}</div>
+          <h2 className="mt-4 font-clash text-4xl font-semibold leading-tight tracking-tight text-[#14110D] md:text-5xl">
+            {t("visitTitle")}
+          </h2>
+        </div>
 
-            <div className="mt-8 space-y-5 text-[15px]">
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#C8A45C]" />
-                <div>
-                  <div className="font-semibold text-[#14110D]">Address</div>
-                  <div className="text-[#7C7568]">{site.address}</div>
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
+          {site.locations.map((loc) => (
+            <div key={loc.key} className="overflow-hidden rounded-[28px] border border-[var(--line)] bg-[#F6F1E7]">
+              <div className="p-8">
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#C8A45C]" />
+                  <div>
+                    <div className="eyebrow !text-[#A87B33]">{loc.title}</div>
+                    <div className="mt-1 font-clash text-2xl font-semibold text-[#14110D]">{loc.city}</div>
+                    <div className="mt-1 text-sm text-[#7C7568]">{loc.address}</div>
+                  </div>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <Button as="a" href={loc.mapDirections} target="_blank" rel="noreferrer" variant="gold" className="px-5 py-2.5 text-xs">
+                    <Navigation className="h-3.5 w-3.5" /> {t("findUsDirections")}
+                  </Button>
+                  <Button as="a" href={site.whatsapp} target="_blank" rel="noreferrer" variant="ghost" className="px-5 py-2.5 text-xs">
+                    <MessageCircle className="h-3.5 w-3.5" /> {t("findUsWhats")}
+                  </Button>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#C8A45C]" />
-                <div>
-                  <div className="font-semibold text-[#14110D]">Hours</div>
-                  <div className="text-[#7C7568]">{site.hours}</div>
-                </div>
-              </div>
+              <a href={loc.mapOpen} target="_blank" rel="noreferrer" className="block">
+                <iframe
+                  src={loc.mapEmbed}
+                  title={loc.title}
+                  className="h-[240px] w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </a>
             </div>
+          ))}
+        </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button as="a" href={site.mapDirections} target="_blank" rel="noreferrer" variant="gold">
-                <Navigation className="h-4 w-4" /> {t("findUsDirections")}
-              </Button>
-              <Button as="a" href={`tel:${site.phone}`} variant="callnow">
-                <Phone className="h-4 w-4" /> {site.phoneDisplay}
-              </Button>
-              <Button as="a" href={site.whatsapp} target="_blank" rel="noreferrer" variant="ghost-dark">
-                <MessageCircle className="h-4 w-4" /> {t("findUsWhats")}
-              </Button>
-            </div>
-          </div>
-
-          <div>
-            <a
-              href={site.mapOpen}
-              target="_blank"
-              rel="noreferrer"
-              className="relative block overflow-hidden rounded-[28px] border border-[var(--line)] shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)]"
-            >
-              <iframe
-                src={site.mapEmbed}
-                title="Qasr Al Bustan Truck Tyres — Sharjah location"
-                className="h-[420px] w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </a>
-            <p className="mt-3 text-center text-xs text-[#7C7568]">Click map for directions</p>
-          </div>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <Button as="a" href={`tel:${site.phone}`} variant="callnow">
+            <Phone className="h-4 w-4" /> {site.phoneDisplay}
+          </Button>
+          <Button as="a" href={`mailto:${site.email}`} variant="ghost">
+            <Mail className="h-4 w-4" /> {site.email}
+          </Button>
         </div>
       </div>
     </section>
