@@ -2,7 +2,8 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export type Lang = "en" | "ar" | "fa";
 
-type Dict = Record<string, { en: string; ar: string; fa: string }>;
+type Entry = { en: string; ar: string; fa?: string };
+type Dict = Record<string, Entry>;
 
 export const dict = {
   brand: { en: "Qasr Al Bustan Tyres", ar: "قصر البستان للإطارات", fa: "قصر البستان تایرز" },
@@ -119,7 +120,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     try { localStorage.setItem("qab.lang", l); } catch {}
   };
 
-  const t = (k: TKey) => dict[k][lang];
+  const t = (k: TKey) => {
+    const entry = dict[k] as Entry;
+    return (entry[lang] ?? entry.fa ?? entry.en) as string;
+  };
   return <LanguageCtx.Provider value={{ lang, setLang, t }}>{children}</LanguageCtx.Provider>;
 }
 
