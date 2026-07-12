@@ -71,7 +71,7 @@ export function FloatingActions() {
       <PulseRingBtn href={site.whatsapp} target="_blank" bg="#25D366" label="WhatsApp">
         <WhatsAppLogo className="h-7 w-7" />
       </PulseRingBtn>
-      <PulseRingBtn href={`tel:${site.phone}`} bg="#C0392B" label="Call us">
+      <PulseRingBtn href={`tel:${site.phone}`} bg="#3A3A3D" label="Call us">
         <Phone className="h-5 w-5" />
       </PulseRingBtn>
       <PulseRingBtn
