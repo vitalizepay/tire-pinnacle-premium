@@ -92,6 +92,56 @@ export const dict = {
   // Find us
   findUsWhats: { en: "WhatsApp", ar: "واتساب" },
   findUsDirections: { en: "Get Directions", ar: "الاتجاهات" },
+
+  // Premium banner
+  bannerEyebrow: { en: "Built for UAE Roads", ar: "مصنوعة لطرق الإمارات", fa: "ساخته‌شده برای جاده‌های امارات" },
+  bannerTitle1: { en: "Uncompromising Durability.", ar: "متانة لا تلين.", fa: "دوام بی‌تردید." },
+  bannerTitle2: { en: "Everyday Reliability.", ar: "أداء موثوق كل يوم.", fa: "اطمینان روزانه." },
+  bannerDesc: {
+    en: "From city highways to desert routes — our premium tyre range is engineered for safety, performance and the toughest UAE climates.",
+    ar: "من الطرق السريعة في المدن إلى مسارات الصحراء — إطاراتنا الفاخرة مصممة للأمان والأداء وأقسى ظروف مناخ الإمارات.",
+    fa: "از بزرگراه‌های شهری تا مسیرهای بیابانی — لاستیک‌های پریمیوم ما برای ایمنی، عملکرد و سخت‌ترین شرایط اقلیمی امارات طراحی شده‌اند.",
+  },
+  bannerCta: { en: "Explore Our Tyres", ar: "استعرض إطاراتنا", fa: "مشاهده لاستیک‌ها" },
+
+  // Vehicle Categories section
+  vehEyebrow: { en: "Vehicle Categories", ar: "فئات المركبات", fa: "دسته‌بندی خودروها" },
+  vehTitleA: { en: "Tyres for", ar: "إطارات لـ", fa: "لاستیک برای" },
+  vehTitleB: { en: "Every Vehicle.", ar: "كل مركبة.", fa: "هر خودرو." },
+  vehDesc: {
+    en: "From passenger cars and SUVs to heavy trucks, buses and off-road buggies — explore our full commercial range.",
+    ar: "من سيارات الركاب والدفع الرباعي إلى الشاحنات الثقيلة والحافلات وعربات الطرق الوعرة — استعرض تشكيلتنا التجارية الكاملة.",
+    fa: "از خودروی سواری و شاسی‌بلند تا کامیون سنگین، اتوبوس و باگی آفرود — تشکیلات کامل ما را ببینید.",
+  },
+
+  // Tyres page
+  tyresHeroTitle: { en: "Golden Horse Tyre Range", ar: "تشكيلة إطارات جولدن هورس", fa: "مجموعه لاستیک گلدن هورس" },
+  tyresHeroSub: {
+    en: "Premium tyres engineered for every journey. Explore our complete range for passenger cars, SUVs, commercial vans, medium trucks, heavy trucks, buses, and off-road vehicles across the UAE.",
+    ar: "إطارات فاخرة مصممة لكل رحلة. استعرض تشكيلتنا الكاملة لسيارات الركاب والدفع الرباعي والفانات التجارية والشاحنات المتوسطة والثقيلة والحافلات والمركبات الوعرة في الإمارات.",
+    fa: "لاستیک‌های پریمیوم برای هر سفر. مجموعه کامل ما را برای سواری، شاسی‌بلند، ون تجاری، کامیون متوسط و سنگین، اتوبوس و خودروهای آفرود در امارات ببینید.",
+  },
+  tyresSizes: { en: "Available sizes", ar: "المقاسات المتوفرة", fa: "سایزهای موجود" },
+  tyresRequestQuote: { en: "Request Quote", ar: "طلب عرض سعر", fa: "درخواست قیمت" },
+  tyresWhatsapp: { en: "WhatsApp", ar: "واتساب", fa: "واتساپ" },
+  whyGHTitle: { en: "Why Choose Golden Horse", ar: "لماذا تختار جولدن هورس", fa: "چرا گلدن هورس" },
+  whyGH1: { en: "Premium Rubber Technology", ar: "تقنية مطاط فاخرة", fa: "فناوری لاستیک پریمیوم" },
+  whyGH2: { en: "Excellent Road Grip", ar: "التصاق ممتاز بالطريق", fa: "چسبندگی عالی جاده" },
+  whyGH3: { en: "Long Tyre Life", ar: "عمر تشغيل طويل", fa: "عمر طولانی لاستیک" },
+  whyGH4: { en: "Heat Resistance for UAE Climate", ar: "مقاومة للحرارة لمناخ الإمارات", fa: "مقاومت گرمایی برای اقلیم امارات" },
+  whyGH5: { en: "High Load Capacity", ar: "سعة تحميل عالية", fa: "ظرفیت بار بالا" },
+  whyGH6: { en: "Reliable Performance", ar: "أداء موثوق", fa: "عملکرد مطمئن" },
+  whyGH7: { en: "UAE-Wide Availability", ar: "متوفرة في جميع أنحاء الإمارات", fa: "موجود در سراسر امارات" },
+  helpTitle: { en: "Looking for the Right Tyre?", ar: "تبحث عن الإطار المناسب؟", fa: "به دنبال لاستیک مناسب هستید؟" },
+  helpDesc: {
+    en: "Our tyre specialists are ready to help you select the perfect tyre for your passenger car, SUV, commercial van, truck, bus, or off-road vehicle.",
+    ar: "خبراؤنا مستعدون لمساعدتك في اختيار الإطار الأمثل لسيارتك أو الدفع الرباعي أو الفان التجاري أو الشاحنة أو الحافلة أو مركبة الطرق الوعرة.",
+    fa: "متخصصان ما آماده‌اند تا در انتخاب لاستیک مناسب برای خودروی شما راهنمایی کنند.",
+  },
+
+  // Contact locations
+  visitEyebrow: { en: "Visit Our Locations", ar: "زيارة مواقعنا", fa: "مکان‌های ما" },
+  visitTitle: { en: "Find Us Across the UAE", ar: "اعثر علينا في الإمارات", fa: "ما را در امارات پیدا کنید" },
 } satisfies Dict;
 
 export type TKey = keyof typeof dict;
