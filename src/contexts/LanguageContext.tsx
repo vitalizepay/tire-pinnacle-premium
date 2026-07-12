@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-export type Lang = "en" | "ar";
+export type Lang = "en" | "ar" | "fa";
 
-type Dict = Record<string, { en: string; ar: string }>;
+type Dict = Record<string, { en: string; ar: string; fa: string }>;
 
 export const dict = {
-  brand: { en: "Qasr Al Bustan Tyres", ar: "قصر البستان للإطارات" },
+  brand: { en: "Qasr Al Bustan Tyres", ar: "قصر البستان للإطارات", fa: "قصر البستان تایرز" },
   brandSub: { en: "Commercial Truck & Car Tyres", ar: "إطارات الشاحنات والسيارات التجارية" },
   navHome: { en: "Home", ar: "الرئيسية" },
   navAbout: { en: "About", ar: "من نحن" },
