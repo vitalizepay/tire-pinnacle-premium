@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/qasr-logo.png.asset.json";
 import { site } from "@/data/site";
 import { Button } from "@/components/Button";
 import { LanguageToggle, useLang, type TKey } from "@/contexts/LanguageContext";
@@ -9,7 +8,7 @@ import { LanguageToggle, useLang, type TKey } from "@/contexts/LanguageContext";
 const links: { key: TKey; href: string }[] = [
   { key: "navHome", href: "#home" },
   { key: "navAbout", href: "#about" },
-  { key: "navTyres", href: "#tyres" },
+  { key: "navTyres", href: "/tyres" },
 ];
 
 export function Header() {
@@ -34,20 +33,10 @@ export function Header() {
             : "px-5 py-3 shadow-[0_20px_60px_-20px_rgba(12,12,14,0.18)]")
         }
       >
-        <Link to="/" className="flex shrink-0 items-center gap-3">
-          <img
-            src={logoAsset.url}
-            alt="Qasr Al Bustan Tyres"
-            className="h-12 w-12 object-contain md:h-14 md:w-14"
-          />
-          <div className="leading-tight">
-            <div className="font-clash text-xl font-semibold tracking-tight text-[#14110D] sm:text-2xl md:text-3xl whitespace-nowrap">
-              {t("brand")}
-            </div>
-            <div className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C] sm:block">
-              {t("brandSub")}
-            </div>
-          </div>
+        <Link to="/" className="flex min-w-0 shrink items-center">
+          <span className="font-clash text-2xl font-semibold tracking-tight text-[#14110D] sm:text-3xl md:text-4xl lg:text-[38px] whitespace-nowrap">
+            {t("brand")}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -95,10 +84,7 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-[#0C0C0E] px-6 py-6 lg:hidden">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src={logoAsset.url} alt="" className="h-10 w-10" />
-              <div className="font-clash text-white">Qasr Al Bustan</div>
-            </div>
+            <div className="font-clash text-xl text-white">{t("brand")}</div>
             <button
               aria-label="Close"
               onClick={() => setOpen(false)}
