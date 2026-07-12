@@ -105,14 +105,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const stored = localStorage.getItem("qab.lang");
-      if (stored === "en" || stored === "ar") setLangState(stored);
+      if (stored === "en" || stored === "ar" || stored === "fa") setLangState(stored as Lang);
     } catch {}
   }, []);
 
   useEffect(() => {
     const html = document.documentElement;
     html.setAttribute("lang", lang);
-    html.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    html.setAttribute("dir", lang === "ar" || lang === "fa" ? "rtl" : "ltr");
   }, [lang]);
 
   const setLang = (l: Lang) => {
@@ -135,19 +135,19 @@ export function useLang() {
 
 export function LanguageToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useLang();
+  const cycle = () => setLang(lang === "en" ? "ar" : lang === "ar" ? "fa" : "en");
+  const label = lang === "en" ? "EN" : lang === "ar" ? "ع" : "فا";
   return (
     <button
       type="button"
-      onClick={() => setLang(lang === "en" ? "ar" : "en")}
+      onClick={cycle}
       aria-label="Toggle language"
       className={
         "inline-flex h-10 items-center gap-1 rounded-full border border-[var(--line)] bg-white/80 px-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#14110D] transition hover:bg-white " +
         className
       }
     >
-      <span className={lang === "en" ? "text-[#C8A45C]" : "opacity-50"}>EN</span>
-      <span className="opacity-30">/</span>
-      <span className={lang === "ar" ? "text-[#C8A45C]" : "opacity-50"} style={{ fontFamily: "system-ui" }}>ع</span>
+      <span className="text-[#C8A45C]" style={{ fontFamily: "system-ui" }}>{label}</span>
     </button>
   );
 }
