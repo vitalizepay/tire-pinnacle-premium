@@ -1,5 +1,4 @@
 import { ArrowUp, MapPin, Phone, Mail, Clock } from "lucide-react";
-import logoAsset from "@/assets/qasr-logo.png.asset.json";
 import { site } from "@/data/site";
 import { useLang, type TKey } from "@/contexts/LanguageContext";
 
@@ -18,12 +17,9 @@ export function Footer() {
     <footer id="contact" className="bg-[#0C0C0E] text-white/70">
       <div className="container-x py-16">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center gap-4">
-            <img src={logoAsset.url} alt="Qasr Al Bustan Tyres" className="h-14 w-14 object-contain" />
-            <div>
-              <div className="font-clash text-lg font-semibold text-white">{t("brand")}</div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C]">{t("brandSub")}</div>
-            </div>
+          <div>
+            <div className="font-clash text-2xl font-semibold text-white sm:text-3xl">{t("brand")}</div>
+            <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C8A45C]">{t("brandSub")}</div>
           </div>
           <p className="max-w-xl text-sm leading-relaxed text-white/60">
             {t("footerTagline")}
@@ -49,11 +45,19 @@ export function Footer() {
           </div>
           <div>
             <h4 className="eyebrow !text-[#C8A45C]">{t("footerContact")}</h4>
-            <ul className="mt-5 space-y-4 text-sm">
-              <li className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><span>{site.address}</span></li>
+            <ul className="mt-5 space-y-5 text-sm">
+              {site.locations.map((loc) => (
+                <li key={loc.key} className="flex gap-3">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" />
+                  <div>
+                    <div className="font-semibold text-white">{loc.title}</div>
+                    <div className="text-white/60">{loc.address}</div>
+                  </div>
+                </li>
+              ))}
               <li className="flex gap-3"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><a href={`tel:${site.phone}`} className="hover:text-white">{site.phoneDisplay}</a></li>
-              <li className="flex gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><span>{site.hours}</span></li>
               <li className="flex gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+              <li className="flex gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A45C]" /><span>{site.hours}</span></li>
             </ul>
           </div>
         </div>
