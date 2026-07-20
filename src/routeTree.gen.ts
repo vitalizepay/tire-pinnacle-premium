@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TyresRouteImport } from './routes/tyres'
+import { Route as SpecRouteImport } from './routes/spec'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,6 +22,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const TyresRoute = TyresRouteImport.update({
   id: '/tyres',
   path: '/tyres',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpecRoute = SpecRouteImport.update({
+  id: '/spec',
+  path: '/spec',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
+    | '/spec'
     | '/tyres'
     | '/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
+    | '/spec'
     | '/tyres'
     | '/blog/$slug'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
+    | '/spec'
     | '/tyres'
     | '/blog/$slug'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SpecRoute: typeof SpecRoute
   TyresRoute: typeof TyresRoute
 }
 
@@ -140,6 +153,13 @@ declare module '@tanstack/react-router' {
       path: '/tyres'
       fullPath: '/tyres'
       preLoaderRoute: typeof TyresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spec': {
+      id: '/spec'
+      path: '/spec'
+      fullPath: '/spec'
+      preLoaderRoute: typeof SpecRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -211,6 +231,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SpecRoute: SpecRoute,
   TyresRoute: TyresRoute,
 }
 export const routeTree = rootRouteImport
