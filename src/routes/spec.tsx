@@ -33,7 +33,7 @@ function SpecPage() {
 
       <section className="relative overflow-hidden bg-[#0C0C0E] pt-40 pb-20 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,164,92,0.18),transparent_55%)]" />
-        <div className="container-x relative">
+        <div className="relative pl-6 pr-6 md:pl-16 lg:pl-24">
           <nav className="mb-6 flex items-center gap-2 text-xs text-white/60">
             <Link to="/" className="hover:text-[#C8A45C]">Home</Link>
             <ChevronRight className="h-3 w-3" />
@@ -52,7 +52,7 @@ function SpecPage() {
       </section>
 
       <section className="border-b border-[var(--line)] bg-white/60 backdrop-blur">
-        <div className="container-x flex flex-wrap items-center gap-2 py-6">
+        <div className="flex flex-wrap items-center gap-2 py-6 pl-6 pr-6 md:pl-16 lg:pl-24">
           <div className="mr-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#7C7568]">
             <Filter className="h-3.5 w-3.5 text-[#C8A45C]" />
             Filter
@@ -78,7 +78,7 @@ function SpecPage() {
       </section>
 
       <section className="py-16">
-        <div className="container-x space-y-10">
+        <div className="space-y-10 pl-6 pr-6 md:pl-16 lg:pl-24 max-w-6xl">
           {tyres.map((tyre, i) => (
             <SpecCard key={tyre.code} tyre={tyre} index={i + 1} />
           ))}
