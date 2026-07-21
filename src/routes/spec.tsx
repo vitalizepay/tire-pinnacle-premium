@@ -40,10 +40,10 @@ function SpecPage() {
             <span className="text-[#C8A45C]">Specifications</span>
           </nav>
           <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#C8A45C]">
-            Technical Data
+            Top Performers
           </div>
           <h1 className="mt-4 font-clash text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            Tyre <span className="font-serif-italic text-gold-grad">Specifications</span>
+            Best <span className="font-serif-italic text-gold-grad">Selling</span>
           </h1>
           <p className="mt-5 max-w-2xl text-white/70 md:text-lg">
             Complete technical spec sheets for our commercial truck tyre range — steer, drive, trailer and all-position patterns for long haul, regional, mixed service and off-road applications.
