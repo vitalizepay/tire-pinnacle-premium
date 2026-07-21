@@ -7,7 +7,7 @@ import { useLang, type Lang, type TKey } from "@/contexts/LanguageContext";
 import { site } from "@/data/site";
 import heroImg from "@/assets/tyres-hero.jpg";
 
-export const Route = createFileRoute("/tyres")({
+export const Route = createFileRoute("/vehicle")({
   head: () => ({
     meta: [
       { title: "Tyre Range — Qasr Al Bustan Tyres UAE" },

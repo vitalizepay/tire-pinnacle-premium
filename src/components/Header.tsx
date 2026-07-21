@@ -9,6 +9,7 @@ const links: { key: TKey; href: string }[] = [
   { key: "navHome", href: "#home" },
   { key: "navAbout", href: "#about" },
   { key: "navTyres", href: "/tyres" },
+  { key: "navVehicle", href: "/vehicle" },
 ];
 
 export function Header() {

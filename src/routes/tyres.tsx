@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 import { specTyres, categories, type Category, type SpecTyre } from "@/data/specs";
 
-export const Route = createFileRoute("/spec")({
+export const Route = createFileRoute("/tyres")({
   head: () => ({
     meta: [
       { title: "Tyre Specifications — Qasr Al Bustan Tyres" },

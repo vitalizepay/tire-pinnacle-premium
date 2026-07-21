@@ -9,8 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VehicleRouteImport } from './routes/vehicle'
 import { Route as TyresRouteImport } from './routes/tyres'
-import { Route as SpecRouteImport } from './routes/spec'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -19,14 +19,14 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const VehicleRoute = VehicleRouteImport.update({
+  id: '/vehicle',
+  path: '/vehicle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TyresRoute = TyresRouteImport.update({
   id: '/tyres',
   path: '/tyres',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SpecRoute = SpecRouteImport.update({
-  id: '/spec',
-  path: '/spec',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -72,8 +72,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
+  '/vehicle': typeof VehicleRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesByTo {
@@ -83,8 +83,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
+  '/vehicle': typeof VehicleRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesById {
@@ -95,8 +95,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/spec': typeof SpecRoute
   '/tyres': typeof TyresRoute
+  '/vehicle': typeof VehicleRoute
   '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRouteTypes {
@@ -108,8 +108,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
-    | '/spec'
     | '/tyres'
+    | '/vehicle'
     | '/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -119,8 +119,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
-    | '/spec'
     | '/tyres'
+    | '/vehicle'
     | '/blog/$slug'
   id:
     | '__root__'
@@ -130,8 +130,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fleet'
     | '/sitemap.xml'
-    | '/spec'
     | '/tyres'
+    | '/vehicle'
     | '/blog/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -142,24 +142,24 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SpecRoute: typeof SpecRoute
   TyresRoute: typeof TyresRoute
+  VehicleRoute: typeof VehicleRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vehicle': {
+      id: '/vehicle'
+      path: '/vehicle'
+      fullPath: '/vehicle'
+      preLoaderRoute: typeof VehicleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tyres': {
       id: '/tyres'
       path: '/tyres'
       fullPath: '/tyres'
       preLoaderRoute: typeof TyresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spec': {
-      id: '/spec'
-      path: '/spec'
-      fullPath: '/spec'
-      preLoaderRoute: typeof SpecRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -231,19 +231,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SpecRoute: SpecRoute,
   TyresRoute: TyresRoute,
+  VehicleRoute: VehicleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

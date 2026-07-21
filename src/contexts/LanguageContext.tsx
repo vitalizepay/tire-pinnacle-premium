@@ -11,6 +11,7 @@ export const dict = {
   navHome: { en: "Home", ar: "الرئيسية" },
   navAbout: { en: "About", ar: "من نحن" },
   navTyres: { en: "Tyres", ar: "الإطارات" },
+  navVehicle: { en: "Vehicle", ar: "المركبات", fa: "خودرو" },
   callNow: { en: "Call Now", ar: "اتصل الآن" },
 
   heroEyebrow: { en: "Commercial Truck Tyre Specialists", ar: "متخصصون في إطارات الشاحنات التجارية" },

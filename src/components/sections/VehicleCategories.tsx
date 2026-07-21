@@ -31,7 +31,7 @@ export function VehicleCategories() {
           {tyreCategories.map((c, i) => (
             <Link
               key={c.slug}
-              to="/tyres"
+              to="/vehicle"
               hash={c.slug}
               className="group relative overflow-hidden rounded-[22px] border border-[rgba(214,162,74,0.18)] bg-white/[0.03] transition-all duration-[400ms] ease-out hover:-translate-y-2 hover:border-[#D6A24A] hover:shadow-[0_30px_70px_-20px_rgba(214,162,74,0.45)]"
               style={{ animationDelay: `${0.05 + i * 0.05}s` }}
