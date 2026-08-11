@@ -17,6 +17,7 @@ import medium from "@/assets/cat-medium-truck.jpg";
 import heavy from "@/assets/cat-heavy-truck.jpg";
 import bus from "@/assets/cat-bus.jpg";
 import buggy from "@/assets/cat-buggy.jpg";
+import jcb from "@/assets/cat-jcb.jpg";
 
 export const tyreCategories: TyreCategory[] = [
   {
@@ -120,5 +121,19 @@ export const tyreCategories: TyreCategory[] = [
       "لاستیک‌های با کارایی بالا برای تپه‌های شنی، بیابان و زمین‌های ناهموار.",
     image: buggy,
     sizes: ["265/65R17","265/70R16","325/95R24","12.00R24"],
+  },
+  {
+    slug: "jcb-construction",
+    titleEn: "JCB & Construction",
+    titleAr: "جي سي بي والمعدات الإنشائية",
+    titleFa: "JCB و ماشین‌آلات ساختمانی",
+    descEn:
+      "Reinforced industrial tyres for JCB backhoe loaders, excavators and telehandlers — built for heavy loads, rocky sites and UAE desert heat with cut-resistant deep-lug tread.",
+    descAr:
+      "إطارات صناعية معززة لحفارات ولوادر جي سي بي، مصممة للأحمال الثقيلة والمواقع الصخرية وحرارة الصحراء الإماراتية مع نقشات عميقة مقاومة للقطع.",
+    descFa:
+      "لاستیک‌های صنعتی تقویت‌شده برای لودر و بکهوی JCB، مناسب بارهای سنگین، زمین‌های سنگی و گرمای بیابان امارات با آج عمیق مقاوم به بریدگی.",
+    image: jcb,
+    sizes: ["16.9-28","16.9-24","12.5/80-18","10.5/80-18","405/70-20","405/70-24","17.5-25","20.5-25"],
   },
 ];
