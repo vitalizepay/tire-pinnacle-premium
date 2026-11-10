@@ -11,9 +11,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Learn how Qasr Al Bustan Tyres became one of the UAE's most trusted names in premium tyres and fleet services." },
       { property: "og:title", content: "About Qasr Al Bustan Tyres" },
       { property: "og:description", content: "Our story, our mission, our promise to drivers across the UAE." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://qasralbustantyres.com/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://qasralbustantyres.com/about" }],
   }),
   component: AboutPage,
 });

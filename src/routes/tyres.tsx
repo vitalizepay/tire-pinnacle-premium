@@ -9,11 +9,15 @@ import { specTyres, categories, type Category, type SpecTyre } from "@/data/spec
 export const Route = createFileRoute("/tyres")({
   head: () => ({
     meta: [
-      { title: "Tyre Specifications — Qasr Al Bustan Tyres" },
+      { title: "Truck & Bus Tyre Specifications in Sharjah & Dubai | Qasr Al Bustan Tyres" },
       { name: "description", content: "Detailed technical specifications for our commercial truck tyre range: steer, drive, trailer and all-position patterns." },
       { property: "og:title", content: "Tyre Specifications — Qasr Al Bustan Tyres" },
       { property: "og:description", content: "Full spec sheets: size, load index, ply rating, rim, dimensions and inflation pressures." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://qasralbustantyres.com/tyres" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://qasralbustantyres.com/tyres" }],
   }),
   component: SpecPage,
 });

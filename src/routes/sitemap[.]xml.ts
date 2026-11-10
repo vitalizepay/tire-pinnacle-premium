@@ -1,21 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { posts } from "@/data/blog";
 
-const BASE_URL = "";
+const BASE_URL = "https://qasralbustantyres.com";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const staticPaths = ["/", "/about", "/fleet", "/blog", "/contact"];
-        const blogPaths = posts.map((p) => `/blog/${p.slug}`);
-        const all = [...staticPaths, ...blogPaths];
-
+        const paths = ["/", "/about", "/tyres", "/vehicle"];
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
           `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
-          ...all.map((p) => `  <url><loc>${BASE_URL}${p}</loc><changefreq>weekly</changefreq></url>`),
+          ...paths.map((p) => `  <url><loc>${BASE_URL}${p}</loc><changefreq>weekly</changefreq></url>`),
           `</urlset>`,
         ].join("\n");
         return new Response(xml, {
