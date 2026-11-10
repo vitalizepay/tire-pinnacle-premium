@@ -14,9 +14,9 @@ export const Route = createFileRoute("/vehicle")({
       { name: "description", content: "Explore our complete Golden Horse tyre range: passenger cars, SUVs, vans, medium & heavy trucks, buses and off-road buggies across the UAE." },
       { property: "og:title", content: "Golden Horse Tyre Range — Qasr Al Bustan" },
       { property: "og:description", content: "Premium tyres for every vehicle across the UAE." },
-      { property: "og:url", content: "/vehicle" },
+      { property: "og:url", content: "https://qasralbustantyres.com/vehicle" },
     ],
-    links: [{ rel: "canonical", href: "/vehicle" }],
+    links: [{ rel: "canonical", href: "https://qasralbustantyres.com/vehicle" }],
   }),
   component: TyresPage,
 });
