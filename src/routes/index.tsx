@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://qasralbustantyres.com/" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"AutoPartsStore","name":"Qasr Al Bustan Tyres","url":"https://qasralbustantyres.com","telephone":"+971551452878","email":"qasralbustantyres@gmail.com","address":[{"@type":"PostalAddress","streetAddress":"Industrial Area C-14","addressLocality":"Sharjah","addressCountry":"AE"},{"@type":"PostalAddress","addressLocality":"Deira, Dubai","addressCountry":"AE"}],"areaServed":["Sharjah","Dubai","United Arab Emirates"],"sameAs":["https://www.instagram.com/qasralbustan.tyres/"]}) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"AutoPartsStore","name":"Qasr Al Bustan Tyres","url":"https://qasralbustantyres.com","telephone":"+971551452878","email":"qasralbustantyres@gmail.com","address":[{"@type":"PostalAddress","streetAddress":"Industrial Area C-14","addressLocality":"Sharjah","addressCountry":"AE"},{"@type":"PostalAddress","addressLocality":"Deira, Dubai","addressCountry":"AE"}],"areaServed":["Sharjah","Dubai","United Arab Emirates"],"sameAs":["https://www.facebook.com/profile.php?id=61592743040340"]}) }],
   }),
   component: Index,
 });
