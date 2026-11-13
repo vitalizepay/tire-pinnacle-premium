@@ -7,7 +7,7 @@ import { LanguageToggle, useLang, type TKey } from "@/contexts/LanguageContext";
 
 const links: { key: TKey; href: string }[] = [
   { key: "navHome", href: "#home" },
-  { key: "navAbout", href: "#about" },
+  { key: "navAbout", href: "/about" },
   { key: "navTyres", href: "/tyres" },
   { key: "navVehicle", href: "/vehicle" },
 ];
